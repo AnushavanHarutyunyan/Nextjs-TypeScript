@@ -9,8 +9,13 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
 import { TopPageComponent } from "../../page-components/index";
+import { Error404 } from "../404";
 
-function TopPage({ menu, page, products, firstCategory }: ITopPageProps) {
+function TopPage({ page, products, firstCategory }: ITopPageProps) {
+    if (!page || !products) {
+        return <Error404 />;
+    }
+
     return (
         <>
             <Head>
@@ -18,7 +23,7 @@ function TopPage({ menu, page, products, firstCategory }: ITopPageProps) {
                 <meta name="descripton" content={page.metaDescription} />
                 <meta property="og:title" content={page.metaTitle} />
                 <meta property="og:description" content={page.metaDescription} />
-                <meta property="og:type" content='article' />
+                <meta property="og:type" content="article" />
             </Head>
             <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
         </>

@@ -9,7 +9,7 @@ export const icons = {
     up,
 };
 
-export type IconName = keyof typeof icons
+export type IconName = keyof typeof icons;
 
 export interface IButtonIconProps extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     icon: IconName;

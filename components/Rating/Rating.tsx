@@ -6,7 +6,7 @@ import { ForwardedRef, forwardRef, useEffect, useState } from "react";
 
 export const Rating = forwardRef(
     (
-        { isEditable = false, rating, setRating,error, ...props }: IRatingProps,
+        { isEditable = false, rating, setRating, error, ...props }: IRatingProps,
         ref: ForwardedRef<HTMLDivElement>
     ): JSX.Element => {
         const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
@@ -46,7 +46,7 @@ export const Rating = forwardRef(
         }, [rating]);
 
         return (
-            <div {...props} ref={ref} className={cn(styles.ratingWrapper, {[styles.error]: error})}>
+            <div {...props} ref={ref} className={cn(styles.ratingWrapper, { [styles.error]: error })}>
                 {ratingArray.map((r, i) => (
                     <span key={i}>{r}</span>
                 ))}

@@ -4,14 +4,13 @@ import { Rating } from "../Rating/Rating";
 import { Textarea } from "../TextArea/TextArea";
 import { Button } from "../Button/Button";
 import CloseIcon from "./close.svg";
-import cn from "classnames";
-import styles from "./ReviewForm.module.css";
 import { IReviewFormProps } from "./ReviewForm.props";
 import { IReviewForm, IReviewSentResponse } from "./IReviewForm.interface";
 import axios from "axios";
 import { API } from "@/helpers/api";
 import { useState } from "react";
-import { ErrorProps } from "next/error";
+import cn from "classnames";
+import styles from "./ReviewForm.module.css";
 
 export const ReviewForm = ({ productId, className, ...props }: IReviewFormProps): JSX.Element => {
     const {
@@ -35,8 +34,10 @@ export const ReviewForm = ({ productId, className, ...props }: IReviewFormProps)
             } else {
                 setError("Error request");
             }
-        } catch (e: any) {
-            setError(e.message);
+        } catch (e) {
+            if (e instanceof Error) {
+                setError(e.message);
+            }
         }
     };
 

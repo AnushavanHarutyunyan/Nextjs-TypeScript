@@ -4,7 +4,7 @@ import { IMenuItem } from "@/interfaces/menu";
 import axios from "axios";
 import { GetStaticProps } from "next";
 
-function Search({ menu, firstCategory }: IHomeProps) {
+function Search() {
     return <>Search</>;
 }
 

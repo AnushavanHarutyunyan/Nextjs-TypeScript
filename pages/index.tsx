@@ -5,7 +5,7 @@ import axios from "axios";
 import { GetStaticProps } from "next";
 import { useState } from "react";
 
-function Home({ menu, firstCategory }: IHomeProps) {
+function Home() {
     const [rating, setRating] = useState<number>(4);
 
     return (

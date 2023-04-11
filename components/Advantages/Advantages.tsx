@@ -1,5 +1,4 @@
 import { HhAdvantagesProps } from "./Advantages.props";
-import cn from "classnames";
 import styles from "./Advantages.module.css";
 import CheckIcon from "./check.svg";
 

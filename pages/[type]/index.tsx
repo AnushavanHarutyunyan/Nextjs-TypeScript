@@ -6,7 +6,7 @@ import axios from "axios";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 
-function Type({ menu, firstCategory }: ITypeProps) {
+function Type({firstCategory }: ITypeProps) {
     return <>{firstCategory}</>;
 }
 

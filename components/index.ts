@@ -12,4 +12,4 @@ export * from "./TextArea/TextArea";
 export * from "./Search/Search";
 export * from "./Divider/Divider";
 export * from "./Review/Review";
-export * from './ReviewForm/ReviewForm'
+export * from "./ReviewForm/ReviewForm";
