@@ -1,6 +1,6 @@
 import { ForwardedRef, forwardRef } from "react";
 import { ITextAreaProps } from "./TextArea.props";
-import styles from "./Textarea.module.css";
+import styles from "./TextArea.module.css";
 import cn from "classnames";
 
 export const Textarea = forwardRef(

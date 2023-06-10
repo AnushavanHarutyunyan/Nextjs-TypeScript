@@ -18,7 +18,7 @@ export const sortReducer = (state: ISortReducerState, action: SortAction) => {
         case SortEnum.Price:
             return {
                 sort: SortEnum.Price,
-                products: state.products.sort((a, b) => (a.initialRating > b.initialRating ? 1 : -1)),
+                products: state.products.sort((a, b) => (a.price > b.price ? 1 : -1)),
             };
         case "reset":
             return {

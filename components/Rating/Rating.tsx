@@ -1,5 +1,5 @@
 import { IRatingProps } from "./Rating.props";
-import Star from "./Star.svg";
+import Star from "./star.svg";
 import cn from "classnames";
 import styles from "./Rating.module.css";
 import { ForwardedRef, forwardRef, useEffect, useState } from "react";

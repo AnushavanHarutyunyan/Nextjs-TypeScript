@@ -1,3 +1,4 @@
+import { CardTopPage } from "@/components/CardTopPage/CardTopPage";
 import { API } from "@/helpers/api";
 import { firstLevelMenu } from "@/helpers/helpers";
 import { withLayoutHOC } from "@/HOC/withLayoutHOC";
@@ -6,8 +7,12 @@ import axios from "axios";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 
-function Type({firstCategory }: ITypeProps) {
-    return <>{firstCategory}</>;
+function Type({ firstCategory }: ITypeProps) {
+    return (
+        <>
+            <CardTopPage firstLevelMenu={firstLevelMenu} />
+        </>
+    );
 }
 
 export default withLayoutHOC(Type);
@@ -15,7 +20,7 @@ export default withLayoutHOC(Type);
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: firstLevelMenu.map((m) => `/${m.route}`),
-        fallback: true,
+        fallback: false,
     };
 };
 
